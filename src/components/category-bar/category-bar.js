@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 
 const styles = {
     ul: {
@@ -10,6 +13,10 @@ const styles = {
     },
     li: {
         padding: "5px"
+    },
+    link:{
+        color: "black",
+        textDecoration: "none"
     }
 }
 
@@ -18,7 +25,11 @@ export default function CategoryBar(categories) {
     return (
         <ul style={styles.ul}>
             {
-                categories.categories.map( category => <li  style={styles.li} key={category.id}>{ category.name }</li> )
+                categories.categories.map( category => 
+                    <Link  style={styles.link} to={`/categories/${category.id}/products/`}>
+                        <li  style={styles.li} key={category.id}>{ category.name }</li> 
+                    </Link>  
+                )
             }
         </ul>
     )

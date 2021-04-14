@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Link
+  } from "react-router-dom";
 
 const styles = {
     card: {
@@ -18,22 +21,28 @@ const styles = {
     },
     right: {
 
+    },
+    link:{
+        color: "black",
+        textDecoration: "none"
     }
 }
 
 export default function ProductCard(product) {
-    const { name, main_image, price, description, Category } = product.product;
+    const { id, name, main_image, price, description, Category } = product.product;
     return (
-      <div  style={styles.card}>
-          <div style={styles.left}>
-            <img style={styles.img} src={main_image} alt="product_img" />
-          </div>
-          <div style={styles.right}>
-            <h4>{name}</h4>   
-            <b>{price}</b>
-            <p>{description}</p>
-            <i>Category: {Category.name}</i>
-          </div>
-      </div>
+        <Link  style={styles.link} to={`/products/details/${id}`}>
+            <div  style={styles.card}>
+                <div style={styles.left}>
+                    <img style={styles.img} src={main_image} alt="product_img" />
+                </div>
+                <div style={styles.right}>
+                    <h4>{name}</h4>   
+                    <b>{price}</b>
+                    <p>{description}</p>
+                    <i>Category: {Category.name}</i>
+                </div>
+            </div>
+        </Link>
     )
   }
