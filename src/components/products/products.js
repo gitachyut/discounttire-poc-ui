@@ -4,7 +4,7 @@ import ProductCard from '../product-card/product-card';
 export default function Products() {
   const { isLoading, data , error } = useProducts();
   return (
-    <>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
       {
         isLoading &&
           <i> Loading....</i>
@@ -18,6 +18,6 @@ export default function Products() {
       {
         error && <span style={{ color: "red"}}> Something went wrong!</span>
       }
-    </>
+    </div>
   )
 }

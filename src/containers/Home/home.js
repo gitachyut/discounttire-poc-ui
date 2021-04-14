@@ -4,7 +4,7 @@ import Categories from "../../components/categories/categories";
 export default function Home() {
   return (
     <>
-      <h1> Store </h1>
+      <h1>Demo Store </h1>
       <Categories />
       <Products />
     </>

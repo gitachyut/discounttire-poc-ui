@@ -5,7 +5,7 @@ const styles = {
         border: "1px solid grey",
         margin: "5px",
         padding: "5px",
-        width: "500px",
+        width: "450px",
         display: "flex"
     },
     img: {
